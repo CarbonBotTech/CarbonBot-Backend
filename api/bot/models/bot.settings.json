@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bots",
+  "info": {
+    "name": "Bot",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "logo": {
+      "type": "string"
+    },
+    "poster": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text",
+      "required": true,
+      "maxLength": 30000
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 190,
+      "required": true
+    },
+    "website": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "platforms": {
+      "collection": "platform"
+    },
+    "company": {
+      "model": "company"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "links": {
+      "type": "json"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "rating": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "reviews": {
+      "type": "integer",
+      "private": false,
+      "required": true,
+      "default": 0
+    },
+    "twitter": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "facebook": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

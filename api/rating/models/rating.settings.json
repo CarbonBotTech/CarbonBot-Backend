@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ratings",
+  "info": {
+    "name": "Rating",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "review": {
+      "model": "review"
+    },
+    "score": {
+      "type": "decimal",
+      "required": true
+    },
+    "bot": {
+      "model": "bot"
+    }
+  }
+}

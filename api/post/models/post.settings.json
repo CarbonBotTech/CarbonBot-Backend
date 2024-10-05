@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "attachment": {
+      "type": "json"
+    },
+    "link": {
+      "type": "json"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "upvotes": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "downvotes": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "channel": {
+      "model": "channel"
+    },
+    "comment_counter": {
+      "type": "integer",
+      "default": 0
+    },
+    "upvote_counter": {
+      "type": "integer",
+      "default": 0
+    },
+    "downvote_counter": {
+      "type": "integer",
+      "default": 0
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "article"
+      ],
+      "required": false
+    },
+    "content": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

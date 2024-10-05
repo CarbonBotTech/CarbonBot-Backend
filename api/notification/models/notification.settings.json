@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "name": "notification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "comment",
+        "review",
+        "helpful",
+        "like",
+        "dislike",
+        "reply",
+        "collection"
+      ]
+    },
+    "read": {
+      "type": "boolean",
+      "default": false
+    },
+    "bot": {
+      "model": "bot"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "review": {
+      "model": "review"
+    },
+    "post": {
+      "model": "post"
+    },
+    "comment": {
+      "model": "comment"
+    },
+    "reply": {
+      "model": "reply"
+    },
+    "collection_": {
+      "model": "collection"
+    }
+  }
+}

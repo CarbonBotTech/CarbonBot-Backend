@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "channels",
+  "info": {
+    "name": "channel"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "private": false,
+      "maxLength": 50,
+      "minLength": 3,
+      "required": true
+    },
+    "tagline": {
+      "type": "text",
+      "maxLength": 300
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

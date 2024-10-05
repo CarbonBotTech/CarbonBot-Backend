@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/comments/:id",
+      "handler": "comment.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/comments",
+      "handler": "comment.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/comments/:id",
+      "handler": "comment.update",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/reviews",
+      "handler": "review.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/reviews/count",
+      "handler": "review.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/reviews",
+      "handler": "review.create",
+      "config": {
+        "policies": ["global::beforeReview"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/reviews/:id",
+      "handler": "review.update",
+      "config": {
+        "policies": ["global::canEditReview"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/reviews/:id/upvote",
+      "handler": "review.upvote",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/reviews/:id",
+      "handler": "review.delete",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/reviews/:id",
+      "handler": "review.findOne",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

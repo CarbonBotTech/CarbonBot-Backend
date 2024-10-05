@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bots",
+      "handler": "bot.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bots/count",
+      "handler": "bot.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bots/my",
+      "handler": "bot.my",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bots/search/:query",
+      "handler": "bot.search",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/bots/:id",
+      "handler": "bot.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bots",
+      "handler": "bot.create",
+      "config": {
+        "policies": ["global::validateNewBotRequest"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bots/:id",
+      "handler": "bot.update",
+      "config": {
+        "policies": ["global::canEditBot","global::validateNewBotRequest"]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/bots/:id/upload",
+      "handler": "bot.upload",
+      "config": {
+        "policies": ["global::canEditBot"]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bots/:id",
+      "handler": "bot.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "name": "Review",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "content": {
+      "type": "richtext",
+      "maxLength": 3000,
+      "required": true
+    },
+    "bot": {
+      "model": "bot"
+    },
+    "rating": {
+      "model": "rating"
+    },
+    "upvotes": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}

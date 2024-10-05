@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platforms",
+  "info": {
+    "name": "Platform",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "communication",
+        "development"
+      ]
+    },
+    "logo": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "about": {
+      "type": "text"
+    }
+  }
+}

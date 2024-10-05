@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "replies",
+  "info": {
+    "name": "reply",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": true
+    },
+    "post": {
+      "model": "post"
+    },
+    "target": {
+      "model": "reply"
+    },
+    "parent": {
+      "model": "comment"
+    }
+  }
+}

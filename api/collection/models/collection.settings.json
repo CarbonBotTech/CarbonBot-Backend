@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "name": "collection",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 300,
+      "required": true
+    },
+    "about": {
+      "type": "text",
+      "private": false,
+      "maxLength": 1000,
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "upvotes": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "upvote_counter": {
+      "type": "integer",
+      "default": 0
+    },
+    "bot_counter": {
+      "type": "integer",
+      "default": 0
+    },
+    "private": {
+      "type": "boolean",
+      "default": false
+    },
+    "bots": {
+      "collection": "bot"
+    },
+    "poster": {
+      "type": "string"
+    },
+    "approved": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

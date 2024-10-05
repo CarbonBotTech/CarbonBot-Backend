@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/assets",
+      "handler": "general.getAssets",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/news",
+      "handler": "general.getNews",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/import",
+      "handler": "general.import",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

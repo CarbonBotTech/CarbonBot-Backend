@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "name": "Company",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "logo": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string",
+      "maxLength": 190
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "website": {
+      "type": "string"
+    },
+    "poster": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "address_1": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "address_2": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "city": {
+      "type": "string",
+      "maxLength": 85
+    },
+    "state": {
+      "type": "string",
+      "maxLength": 30
+    },
+    "zip": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "company"
+    },
+    "twitter": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "facebook": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "linkedin": {
+      "type": "string",
+      "maxLength": 120
+    }
+  }
+}
